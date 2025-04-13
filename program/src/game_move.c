@@ -16,6 +16,10 @@ void	rerender(t_cub *c)
 {
 	mlx_destroy_image(c->mlx, c->img.img);
 	c->img.img = mlx_new_image(c->mlx, SW, SH);
+	c->img.addr = mlx_get_data_addr(c->img.img,
+		&c->img.bits_per_pixel,
+		&c->img.line_length,
+		&c->img.endian);
 	raycast(c);
 	mlx_put_image_to_window(c->mlx, c->mlx_win,
 		(&c->img)->img, 0, 0);

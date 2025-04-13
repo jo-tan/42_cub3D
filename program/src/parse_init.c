@@ -12,15 +12,15 @@
 
 #include "cub3d.h"
 
-void	init_txt(t_data txt)
+void	init_txt(t_data *txt)
 {
-	txt.img = NULL;
-	txt.addr = NULL;
-	txt.bits_per_pixel = 0;
-	txt.line_length = 0;
-	txt.endian = 0;
-	txt.width = 0;
-	txt.height = 0;
+	txt->img = NULL;
+	txt->addr = NULL;
+	txt->bits_per_pixel = 0;
+	txt->line_length = 0;
+	txt->endian = 0;
+	txt->width = 0;
+	txt->height = 0;
 }
 
 static void	init1(t_cub *file_data)
@@ -32,13 +32,13 @@ static void	init1(t_cub *file_data)
 	file_data->p_x = -1;
 	file_data->p_y = -1;
 	file_data->no_txt = NULL;
-	init_txt(file_data->notxt);
+	init_txt(&file_data->notxt);
 	file_data->so_txt = NULL;
-	init_txt(file_data->sotxt);
+	init_txt(&file_data->sotxt);
 	file_data->ea_txt = NULL;
-	init_txt(file_data->eatxt);
+	init_txt(&file_data->eatxt);
 	file_data->we_txt = NULL;
-	init_txt(file_data->wetxt);
+	init_txt(&file_data->wetxt);
 	file_data->f_rgb = -1;
 	file_data->c_rgb = -1;
 	file_data->map = NULL;
@@ -51,7 +51,7 @@ void	init_cub_info(t_cub *file_data)
 	init1(file_data);
 	file_data->mlx = 0;
 	file_data->mlx_win = 0;
-	init_txt(file_data->img);
+	init_txt(&file_data->img);
 }
 
 void	init(char *cubfile)

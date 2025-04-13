@@ -14,8 +14,8 @@ NAME 		= cub3D
 
 CC			= cc
 CF			= -Wall -Wextra -Werror -g3 -MMD
-INC			= -I inc/ -I $(LIBFT_DIR) -I ${MLX_DIR}/
-
+INC			= -I ./inc -I $(LIBFT_DIR) -I /usr/local/include
+LIB			= -L ./libft -lft -L /usr/local/lib -lmlx -lX11 -lXext -lbsd -lm
 LIBFT		= libft/libft.a
 LIBFT_DIR	= libft
 
@@ -48,16 +48,12 @@ O_DIR		= obj
 O_FILES		= $(patsubst $(S_DIR)/%.c,$(O_DIR)/%.o,$(S_FILES))
 D_FILES		= $(patsubst $(S_DIR)/%.c,$(O_DIR)/%.d,$(S_FILES))
 
-MLX_DIR = minilibx-linux
-LMLX = -L minilibx-linux/ -lmlx -lXext -lX11 -lm
-
 RM			= rm -rf
 
 all:		$(LIBFT) $(NAME)
 
 $(NAME):	$(O_FILES)
-	make -C ${MLX_DIR}
-	@$(CC) -o $(NAME) $(O_FILES) -L $(LIBFT_DIR) -lft $(INC) ${LMLX}
+	@$(CC) $(CF) $(INC) -o $@ $^ $(LIB)
 	@echo " [ ok ] | cub3D is ready!"
 
 -include $(D_FILES)

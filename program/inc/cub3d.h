@@ -19,7 +19,7 @@
 # include <limits.h>
 # include <math.h>
 # include "libft.h"
-# include "../minilibx-linux/mlx.h"
+# include <mlx.h>
 # include </usr/include/X11/X.h>
 
 # define SW 960
@@ -133,7 +133,7 @@ typedef struct s_cub
 }	t_cub;
 
 /*parse_init.c*/
-void	init_txt(t_data txt);
+void	init_txt(t_data *txt);
 void	init(char *cubfile);
 void	init_cub_info(t_cub *file_data);
 /*parse_cub.c*/
