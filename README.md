@@ -2,7 +2,7 @@
 
 If you’ve stumbled upon this repo, you're probably curious how someone else built their `cub3d` project.  
 
-This work was done by my amzing teammate ✨[Val](https://github.com/vdeva)✨ and me C:
+This work was done by my amazing teammate ✨[Val](https://github.com/vdeva)✨ and me C:
 
 I done the parsing for map and Val done the math for ray casting.
 
@@ -62,10 +62,13 @@ open -a XQuartz
 In XQuartz → Preferences → Security → ✅ Allow connections from network clients
 Then restart XQuartz.
 
-3. Test the connection  
+3. Test the connection 
+On your host machine:
+```sh
+open -a XQuartz
+``` 
 Inside your container: 
 ```sh 
-apk add xeyes 
 xeyes
 ```
 If xeyes opens a window — you're golden 🌟
