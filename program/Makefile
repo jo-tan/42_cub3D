@@ -11,7 +11,6 @@
 # **************************************************************************** #
 
 NAME 		= cub3D
-
 CC			= cc
 CF			= -Wall -Wextra -Werror -g3 -MMD
 INC			= -I ./inc -I $(LIBFT_DIR) -I /usr/local/include
