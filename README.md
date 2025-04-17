@@ -63,10 +63,6 @@ In XQuartz → Preferences → Security → ✅ Allow connections from network c
 Then restart XQuartz.
 
 3. Test the connection 
-On your host machine:
-```sh
-open -a XQuartz
-``` 
 Inside your container: 
 ```sh 
 xeyes
