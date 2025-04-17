@@ -76,6 +76,44 @@ Any code you edit in your ./program folder on your host is immediately reflected
 
 You get to use VS Code on your Mac, while compiling and running inside Linux. Best of both worlds.
 
+## 👾 Basic Docker Commands
+- Start docker compose at the first time (-d flag for docker to run in the background/detached mode):
+```bash
+docker-compose up -d
+```
+
+- Stop docker compose (without removing the conatiners and network):
+```bash
+docker-compose stop
+```
+
+- Back to work with docker:
+```bash
+docker-compose start
+```
+
+- Done for good and remove containers and networks:
+```bash
+docker-compose down
+```
+
+- Full clean up for all unused image, container, volumes (-a removes all unused images, -f force and skip confirmation prompt, --volumes delete all unused volumes):
+```bash
+docker system prune -af --volumes
+```
+p.s. always be careful with the -f flag... don't use it when you're not sure you want to wipe out everything
+
+- Check running containers (-a for all when checking both running and stopped ones):
+```bash
+docker ps
+```
+
+- Enter a running container:
+```bash
+docker exec -it <container_name_or_id> /bin/bash
+```
+p.s. If the container doesn't have bash (e.g. Alpine), do `sh` instead
+
 ## 🧹 Clean Up
 
 When you’re done working on this project:
